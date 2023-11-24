@@ -1,0 +1,49 @@
+/* CustomComponent.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0.4rem 0;
+}
+
+/* Responsive styles for tablets (e.g., iPad) */
+@media (max-width: 768px) {
+  .container {
+    align-items: center; /* Center items for smaller screens */
+  }
+
+  .title {
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
+  }
+
+  .subtitle {
+    font-size: 1.3rem; /* Adjust font size for smaller screens */
+  }
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 576px) {
+  .title {
+    font-size: 1.1rem; /* Adjust font size for even smaller screens */
+  }
+
+  .subtitle {
+    font-size: 1.2rem; /* Adjust font size for even smaller screens */
+  }
+}

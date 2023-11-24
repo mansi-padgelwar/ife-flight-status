@@ -1,0 +1,11 @@
+/* FlightDetails.module.css */
+
+.flightDetailsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+}

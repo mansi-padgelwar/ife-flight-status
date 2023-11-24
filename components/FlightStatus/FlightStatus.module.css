@@ -1,0 +1,56 @@
+/* FlightStatus.module.css */
+
+.FlightStatusContainer {
+  width: 50%;
+}
+
+.StatusContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.StatusTime {
+  font-size: 1.3rem;
+  padding-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .StatusTime {
+    font-size: 0.7rem;
+  }
+}
+
+.FlightPathContainer {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 50px;
+  border-radius: 50%;
+  border-top-width: 1.5px;
+  border-top-color: black;
+  border-top-style: solid;
+  margin: 0 auto;
+}
+
+.AirportCode {
+  position: absolute;
+  top: 70%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+}
+
+.SourceCode {
+  left: -3%;
+}
+
+.DestinationCode {
+  right: -3%;
+}
+
+@media (max-width: 768px) {
+  .AirportCode {
+    font-size: 0.9rem;
+  }
+}

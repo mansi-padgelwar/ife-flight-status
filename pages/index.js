@@ -1,9 +1,9 @@
-import FlightStatus from "../components/FlightStatus";
-import { flights } from "../data/flights";
 import { motion, useAnimation } from "framer-motion";
 import React, { useState } from "react";
-import { FlightInfo } from "../components/FlightInfo";
 import "../app/globals.css";
+import styles from "./styles/Home.module.css";
+import FlightStatus from "../components/FlightStatus";
+import FlightInfo from "../components/FlightInfo";
 
 export default function Home({ initialFlights }) {
   const containerControls = useAnimation();
@@ -54,37 +54,15 @@ export default function Home({ initialFlights }) {
 
   return (
     <motion.div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "space-between",
-        margin: "1rem",
-        transition: "all 0.5s ease",
-        color: "#7851A9",
-
-        "@media (min-width: 768px)": {
-          margin: "2rem", // Tablet styles
-        },
-
-        "@media (min-width: 1024px)": {
-          margin: "4rem", // Desktop styles
-        },
-      }}
+      className={styles.container} // Use the container class from the CSS module
       animate={containerControls}
     >
       <FlightStatus />
       <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-          width: "100%",
-        }}
+        className={styles.statusContainer} // Use the status-container class from the CSS module
         onClick={handleTitleClick}
       >
-        {flights?.map((flight, index) => (
+        {initialFlights?.map((flight, index) => (
           <FlightInfo
             key={index}
             {...flight}
@@ -98,14 +76,13 @@ export default function Home({ initialFlights }) {
     </motion.div>
   );
 }
+export async function getServerSideProps({ req }) {
+  const res = await fetch(`http://${req.headers.host}/api/flights`);
+  const flights = await res.json();
 
-// export async function getServerSideProps() {
-//   const res = await fetch("http://localhost:3000/api/flights");
-//   const flights = await res.json();
-
-//   return {
-//     props: {
-//       initialFlights: flights,
-//     },
-//   };
-// }
+  return {
+    props: {
+      initialFlights: flights,
+    },
+  };
+}
