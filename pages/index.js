@@ -7,23 +7,47 @@ import FlightInfo from "../components/FlightInfo";
 export default function Home({ initialFlights }) {
   const [isVisible, setIsVisible] = useState(false);
 
+  const expand = () => {
+    setIsVisible(true);
+    if (window.android && window.android.handleExpand) {
+      window.android.handleExpand();
+    }
+  };
+
+  const collapse = () => {
+    setIsVisible(false);
+    if (window.android && window.android.handleCollapse) {
+      window.android.handleCollapse();
+    }
+  };
+
   const handleTitleClick = () => {
-    setIsVisible(!isVisible);
-    // Call the exposed function
-    if (window.android && window.android.handleTitleClick) {
-      window.android.handleTitleClick();
+    isVisible ? collapse() : expand();
+  };
+
+  const handleExpand = () => {
+    setIsVisible(true);
+    if (window.android && window.android.handleExpand) {
+      window.android.handleExpand();
+    }
+  };
+
+  const handleCollapse = () => {
+    setIsVisible(false);
+    if (window.android && window.android.handleCollapse) {
+      window.android.handleCollapse();
     }
   };
 
   useEffect(() => {
-    // Expose the function to the global scope
-    window.handleTitleClick = handleTitleClick;
+    window.handleExpand = handleExpand;
+    window.handleCollapse = handleCollapse;
 
-    // Cleanup function to remove the global function when the component unmounts
     return () => {
-      window.handleTitleClick = null;
+      window.handleExpand = null;
+      window.handleCollapse = null;
     };
-  }, []);
+  }, [isVisible]);
 
   return (
     <div className={`${styles.container} ${isVisible ? styles.visible : ""}`}>
