@@ -9,55 +9,48 @@ export default function Home({ initialFlights }) {
 
   const expand = () => {
     setIsVisible(true);
-    if (window.android && window.android.handleExpand) {
-      window.android.handleExpand();
+    if (window.android && window.android.handleDetailsExpand) {
+      window.android.handleDetailsExpand();
     }
   };
 
   const collapse = () => {
     setIsVisible(false);
-    if (window.android && window.android.handleCollapse) {
-      window.android.handleCollapse();
+    if (window.android && window.android.handleDetailsCollapse) {
+      window.android.handleDetailsCollapse();
     }
   };
 
-  const handleTitleClick = () => {
-    isVisible ? collapse() : expand();
+  const handleDetailsExpand = () => {
+    expand();
   };
 
-  const handleExpand = () => {
-    setIsVisible(true);
-    if (window.android && window.android.handleExpand) {
-      window.android.handleExpand();
-    }
-  };
-
-  const handleCollapse = () => {
-    setIsVisible(false);
-    if (window.android && window.android.handleCollapse) {
-      window.android.handleCollapse();
-    }
+  const handleDetailsCollapse = () => {
+    collapse();
   };
 
   useEffect(() => {
-    window.handleExpand = handleExpand;
-    window.handleCollapse = handleCollapse;
+    window.handleDetailsExpand = handleDetailsExpand;
+    window.handleDetailsCollapse = handleDetailsCollapse;
 
     return () => {
-      window.handleExpand = null;
-      window.handleCollapse = null;
+      window.handleDetailsExpand = null;
+      window.handleDetailsCollapse = null;
     };
   }, [isVisible]);
 
   return (
     <div className={`${styles.container} ${isVisible ? styles.visible : ""}`}>
       <FlightStatus />
-      <div className={styles.statusContainer} onClick={handleTitleClick}>
+      <div
+        className={styles.statusContainer}
+        onClick={isVisible ? handleDetailsCollapse : handleDetailsExpand}
+      >
         {initialFlights?.map((flight, index) => (
           <FlightInfo
             key={index}
             {...flight}
-            onClick={handleTitleClick}
+            onClick={isVisible ? handleDetailsCollapse : handleDetailsExpand}
             isVisible={isVisible}
           />
         ))}
