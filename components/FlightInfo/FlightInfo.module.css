@@ -7,7 +7,7 @@
   align-items: flex-start;
   align-content: flex-start;
   padding: 1rem;
-  color: #7851a9;
+  color: #7030a0;
 }
 
 .titleContainer {
@@ -33,7 +33,7 @@
 }
 
 .activeTitle {
-  background-color: #b899eb;
+  background-color: #7030a052;
 }
 
 /* Responsive Styles for Tablet */

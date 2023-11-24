@@ -7,34 +7,17 @@ import FlightInfo from "../components/FlightInfo";
 export default function Home({ initialFlights }) {
   const [isVisible, setIsVisible] = useState(false);
 
-  const expand = () => {
+  const handleDetailsExpand = () => {
     setIsVisible(true);
     if (window.android && window.android.handleDetailsExpand) {
       window.android.handleDetailsExpand();
     }
   };
 
-  const collapse = () => {
+  const handleDetailsCollapse = () => {
     setIsVisible(false);
     if (window.android && window.android.handleDetailsCollapse) {
       window.android.handleDetailsCollapse();
-    }
-  };
-
-  let hasExpanded = false;
-  let hasCollapsed = false;
-
-  const handleDetailsExpand = () => {
-    if (!hasExpanded) {
-      expand();
-      hasExpanded = true;
-    }
-  };
-
-  const handleDetailsCollapse = () => {
-    if (!hasCollapsed) {
-      collapse();
-      hasCollapsed = true;
     }
   };
 
@@ -46,7 +29,7 @@ export default function Home({ initialFlights }) {
       window.handleDetailsExpand = null;
       window.handleDetailsCollapse = null;
     };
-  }, [isVisible, hasExpanded]);
+  }, [isVisible]);
 
   return (
     <div className={`${styles.container} ${isVisible ? styles.visible : ""}`}>
