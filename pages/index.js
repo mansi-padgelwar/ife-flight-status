@@ -14,20 +14,20 @@ export default function Home({ initialFlights }) {
     if (isVisible) {
       await containerControls.start({
         translateY: 0,
-        transition: { duration: 1, ease: "easeInOut" },
+        transition: { duration: 0.2, ease: "easeInOut" },
       });
       await controls.start({
         translateY: 0,
-        transition: { duration: 1, ease: "easeInOut" },
+        transition: { duration: 0.2, ease: "easeInOut" },
       });
     } else {
       await containerControls.start({
         translateY: 40,
-        transition: { duration: 1, ease: "easeInOut" },
+        transition: { duration: 0.2, ease: "easeInOut" },
       });
       await controls.start({
         translateY: 0,
-        transition: { duration: 1, ease: "easeInOut" },
+        transition: { duration: 0.2, ease: "easeInOut" },
       });
     }
   };
