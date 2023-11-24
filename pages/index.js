@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../app/globals.css";
 import styles from "./styles/Home.module.css";
 import FlightStatus from "../components/FlightStatus";
@@ -9,6 +9,8 @@ export default function Home({ initialFlights }) {
   const containerControls = useAnimation();
   const [isVisible, setIsVisible] = useState(false);
   const controls = useAnimation();
+
+  const containerRef = useRef(null);
 
   const handleCityClick = async () => {
     if (isVisible) {
@@ -52,16 +54,23 @@ export default function Home({ initialFlights }) {
     }
   };
 
+  const startAnimation = async () => {
+    await handleCityClick();
+  };
+
+  const toggleVisibility = async () => {
+    setIsVisible(!isVisible);
+    await handleCityClick();
+  };
+
   return (
     <motion.div
-      className={styles.container} // Use the container class from the CSS module
+      className={styles.container}
       animate={containerControls}
+      ref={containerRef}
     >
       <FlightStatus />
-      <div
-        className={styles.statusContainer} // Use the status-container class from the CSS module
-        onClick={handleTitleClick}
-      >
+      <div className={styles.statusContainer} onClick={handleTitleClick}>
         {initialFlights?.map((flight, index) => (
           <FlightInfo
             key={index}
@@ -70,6 +79,7 @@ export default function Home({ initialFlights }) {
             isVisible={isVisible}
             handleTitleClick={handleTitleClick}
             controls={controls}
+            containerRef={containerRef}
           />
         ))}
       </div>
