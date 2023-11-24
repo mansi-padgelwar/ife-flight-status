@@ -1,13 +1,11 @@
-/* Home.module.css */
-
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   margin: 1rem;
-  transition: all 0.5s ease;
   color: #7851a9;
+  transition: all 0.5s ease;
 
   @media (min-width: 768px) {
     margin: 2rem; /* Tablet styles */
@@ -16,6 +14,10 @@
   @media (min-width: 1024px) {
     margin: 4rem; /* Desktop styles */
   }
+}
+
+.visible {
+  transform: translateY(40px);
 }
 
 .statusContainer {

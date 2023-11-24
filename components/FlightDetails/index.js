@@ -6,7 +6,7 @@ import CustomComponent from "../CustomComponent";
 const FlightDetails = ({ details }) => {
   return (
     <div className={styles.flightDetailsContainer}>
-      {details.map(({ title, subtitle }) => (
+      {details?.map(({ title, subtitle }) => (
         <CustomComponent key={title} title={title} subtitle={subtitle} />
       ))}
     </div>
