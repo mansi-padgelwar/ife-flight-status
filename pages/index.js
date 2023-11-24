@@ -21,12 +21,21 @@ export default function Home({ initialFlights }) {
     }
   };
 
+  let hasExpanded = false;
+  let hasCollapsed = false;
+
   const handleDetailsExpand = () => {
-    expand();
+    if (!hasExpanded) {
+      expand();
+      hasExpanded = true;
+    }
   };
 
   const handleDetailsCollapse = () => {
-    collapse();
+    if (!hasCollapsed) {
+      collapse();
+      hasCollapsed = true;
+    }
   };
 
   useEffect(() => {
@@ -37,7 +46,7 @@ export default function Home({ initialFlights }) {
       window.handleDetailsExpand = null;
       window.handleDetailsCollapse = null;
     };
-  }, [isVisible]);
+  }, [isVisible, hasExpanded]);
 
   return (
     <div className={`${styles.container} ${isVisible ? styles.visible : ""}`}>
