@@ -9,43 +9,34 @@ export default function Home({ initialFlights }) {
 
   const handleDetailsExpand = () => {
     setIsVisible(true);
+    window.Android && window.Android.triggerExpand();
   };
 
   const handleDetailsCollapse = () => {
+    // console.log("entered");
+    // alert("entered");
     setIsVisible(false);
+    window.Android && window.Android.triggerCollapse();
   };
+
+  if (typeof window !== "undefined") {
+    window.handleDetailsCollapse = handleDetailsCollapse;
+  }
 
   return (
     <div className={`${styles.container} ${isVisible ? styles.visible : ""}`}>
       <FlightStatus />
       <div
         className={styles.statusContainer}
-        onClick={
-          isVisible
-            ? () => {
-                handleDetailsCollapse();
-                window.Android && window.Android.triggerCollapse();
-              }
-            : () => {
-                handleDetailsExpand();
-                window.Android && window.Android.triggerExpand();
-              }
-        }
+        onClick={isVisible ? handleDetailsCollapse : handleDetailsExpand}
       >
+        <h1>{isVisible ? "true" : "false"}</h1>
         {initialFlights?.map((flight, index) => (
           <FlightInfo
             key={index}
             {...flight}
-            onClick={
-              isVisible
-                ? () => {
-                    handleDetailsCollapse();
-                    window.Android && window.Android.triggerCollapse();
-                  }
-                : () => {
-                    handleDetailsExpand();
-                    window.Android && window.Android.triggerExpand();
-                  }
+            handleClick={
+              isVisible ? handleDetailsCollapse : handleDetailsExpand
             }
             isVisible={isVisible}
           />
