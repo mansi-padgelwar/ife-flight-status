@@ -25,7 +25,7 @@
 /* Responsive styles for tablets (e.g., iPad) */
 @media (min-width: 1800px) {
   .container {
-    align-items: flex-start;
+    align-items: center;
   }
 
   .title {
