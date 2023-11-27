@@ -11,7 +11,10 @@ const FlightInfo = ({ city, date, details, handleTitleClick, isVisible }) => {
           isVisible ? "" : styles.activeTitle
         }`}
       >
-        <h2 className={styles.title}>{`${city} ${date}`}</h2>
+        <h2 className={styles.title}>
+          {city}{" "}
+          <span style={{ fontWeight: 500, fontSize: "1rem" }}>{date}</span>
+        </h2>
       </div>
       <div
         className={`${styles.detailsContainer} ${

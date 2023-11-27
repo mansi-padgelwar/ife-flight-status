@@ -30,9 +30,9 @@
 
 .PlaneContainer {
   position: absolute;
-  left: -3%;
-  top: 0;
-  bottom: 4%;
+  left: -4%;
+  top: 4px;
+  bottom: -1%;
   transform: rotate(15deg);
 }
 

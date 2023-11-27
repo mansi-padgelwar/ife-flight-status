@@ -15,7 +15,10 @@ const Status = () => {
     <div className={styles.StatusContainer}>
       <p className={styles.FlightNumber}>AI 173/B 777</p>
       <FlightPath />
-      <p className={styles.StatusTime}>15h 30m</p>
+      <p className={styles.StatusTime}>
+        15<span style={{ fontWeight: 500 }}>h</span> 30
+        <span style={{ fontWeight: 500 }}>min</span>
+      </p>
     </div>
   );
 };
