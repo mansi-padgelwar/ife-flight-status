@@ -23,17 +23,17 @@
 }
 
 /* Responsive styles for tablets (e.g., iPad) */
-@media (max-width: 768px) {
+@media (min-width: 1800px) {
   .container {
-    align-items: center; /* Center items for smaller screens */
+    align-items: flex-start;
   }
 
   .title {
-    font-size: 1.2rem; /* Adjust font size for smaller screens */
+    font-size: 1rem;
   }
 
   .subtitle {
-    font-size: 1.3rem; /* Adjust font size for smaller screens */
+    font-size: 0.8rem;
   }
 }
 

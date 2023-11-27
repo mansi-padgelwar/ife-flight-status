@@ -46,18 +46,18 @@
 
 .AirportCode {
   position: absolute;
-  top: 70%;
+  top: 20%;
   transform: translateY(-50%);
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 600;
 }
 
 .SourceCode {
-  left: -3%;
+  left: -16%;
 }
 
 .DestinationCode {
-  right: -3%;
+  right: -16%;
 }
 
 @media (max-width: 768px) {
