@@ -2,6 +2,7 @@
 
 import React from "react";
 import styles from "./FlightStatus.module.css";
+import { PiAirplaneTiltFill } from "react-icons/pi";
 
 const FlightStatus = () => {
   return (
@@ -24,6 +25,7 @@ const Status = () => {
 const FlightPath = () => {
   return (
     <div className={styles.FlightPathContainer}>
+      <PiAirplaneTiltFill size={32} />
       <div className={`${styles.AirportCode} ${styles.SourceCode}`}>DEL</div>
       <div className={`${styles.AirportCode} ${styles.DestinationCode}`}>
         SFO
