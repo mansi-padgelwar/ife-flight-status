@@ -14,7 +14,7 @@ const FlightStatus = () => {
 const Status = () => {
   return (
     <div className={styles.StatusContainer}>
-      <p className={styles.StatusTime}>Current Local Time: 3:30 am</p>
+      <p className={styles.FlightNumber}>AI 173/B 777</p>
       <FlightPath />
       <p className={styles.StatusTime}>15h 30m</p>
     </div>
