@@ -40,10 +40,10 @@
 /* Responsive styles for mobile devices */
 @media (max-width: 576px) {
   .title {
-    font-size: 1.1rem; /* Adjust font size for even smaller screens */
+    font-size: 1.1rem; 
   }
 
   .subtitle {
-    font-size: 1.2rem; /* Adjust font size for even smaller screens */
+    font-size: 1.2rem; 
   }
 }
