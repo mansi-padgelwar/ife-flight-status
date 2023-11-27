@@ -22,27 +22,27 @@
 }
 
 /* Responsive styles for tablets (e.g., iPad) */
-@media (min-width: 1800px) {
+@media (max-width: 1940px) {
   .container {
     align-items: center;
   }
 
   .title {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .subtitle {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 }
 
 /* Responsive styles for mobile devices */
 @media (max-width: 576px) {
   .title {
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
   }
 
   .subtitle {
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
   }
 }
