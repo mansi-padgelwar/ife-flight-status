@@ -13,18 +13,7 @@ export default function Home({ initialFlights }) {
 
   const handleDetailsCollapse = () => {
     setIsVisible(false);
-    window.android && window.android.handleDetailsCollapse();
   };
-
-  // useEffect(() => {
-  //   window.handleDetailsExpand = handleDetailsExpand;
-  //   window.handleDetailsCollapse = handleDetailsCollapse;
-
-  //   return () => {
-  //     window.handleDetailsExpand = null;
-  //     window.handleDetailsCollapse = null;
-  //   };
-  // }, [isVisible]);
 
   return (
     <div className={`${styles.container} ${isVisible ? styles.visible : ""}`}>
