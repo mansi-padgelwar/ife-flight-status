@@ -40,11 +40,11 @@ export default function Home({ initialFlights }) {
               isVisible
                 ? () => {
                     handleDetailsCollapse();
-                    window.android && window.android.handleDetailsCollapse();
+                    window.Android && window.Android.triggerCollapse();
                   }
                 : () => {
                     handleDetailsExpand();
-                    window.android && window.android.handleDetailsExpand();
+                    window.Android && window.Android.triggerExpand();
                   }
             }
             isVisible={isVisible}
