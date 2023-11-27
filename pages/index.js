@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../app/globals.css";
 import styles from "./styles/Home.module.css";
 import FlightStatus from "../components/FlightStatus";
@@ -28,7 +28,7 @@ export default function Home({ initialFlights }) {
               }
             : () => {
                 handleDetailsExpand();
-                window.Android && window.Android.triggerExpand()
+                window.Android && window.Android.triggerExpand();
               }
         }
       >
