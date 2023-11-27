@@ -21,6 +21,10 @@
   align-items: center;
 }
 
+.titleContainer:active {
+  background-color: #7030a052;
+}
+
 .title {
   margin: 0;
   padding: 0;
