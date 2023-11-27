@@ -28,7 +28,7 @@ export default function Home({ initialFlights }) {
               }
             : () => {
                 handleDetailsExpand();
-                window.Android && window.Android.triggerExpand();
+                window.Android && window.Android.triggerExpand()
               }
         }
       >
