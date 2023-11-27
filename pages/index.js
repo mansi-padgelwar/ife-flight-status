@@ -9,40 +9,55 @@ export default function Home({ initialFlights }) {
 
   const handleDetailsExpand = () => {
     setIsVisible(true);
-    if (window.android && window.android.handleDetailsExpand) {
-      window.android.handleDetailsExpand();
-    }
   };
 
   const handleDetailsCollapse = () => {
     setIsVisible(false);
-    if (window.android && window.android.handleDetailsCollapse) {
-      window.android.handleDetailsCollapse();
-    }
+    window.android && window.android.handleDetailsCollapse();
   };
 
-  useEffect(() => {
-    window.handleDetailsExpand = handleDetailsExpand;
-    window.handleDetailsCollapse = handleDetailsCollapse;
+  // useEffect(() => {
+  //   window.handleDetailsExpand = handleDetailsExpand;
+  //   window.handleDetailsCollapse = handleDetailsCollapse;
 
-    return () => {
-      window.handleDetailsExpand = null;
-      window.handleDetailsCollapse = null;
-    };
-  }, [isVisible]);
+  //   return () => {
+  //     window.handleDetailsExpand = null;
+  //     window.handleDetailsCollapse = null;
+  //   };
+  // }, [isVisible]);
 
   return (
     <div className={`${styles.container} ${isVisible ? styles.visible : ""}`}>
       <FlightStatus />
       <div
         className={styles.statusContainer}
-        onClick={isVisible ? handleDetailsCollapse : handleDetailsExpand}
+        onClick={
+          isVisible
+            ? () => {
+                handleDetailsCollapse();
+                window.android && window.android.handleDetailsCollapse();
+              }
+            : () => {
+                handleDetailsExpand();
+                window.android && window.android.handleDetailsExpand();
+              }
+        }
       >
         {initialFlights?.map((flight, index) => (
           <FlightInfo
             key={index}
             {...flight}
-            onClick={isVisible ? handleDetailsCollapse : handleDetailsExpand}
+            onClick={
+              isVisible
+                ? () => {
+                    handleDetailsCollapse();
+                    window.android && window.android.handleDetailsCollapse();
+                  }
+                : () => {
+                    handleDetailsExpand();
+                    window.android && window.android.handleDetailsExpand();
+                  }
+            }
             isVisible={isVisible}
           />
         ))}

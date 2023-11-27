@@ -16,6 +16,9 @@
   width: 100%;
   cursor: pointer;
   opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
