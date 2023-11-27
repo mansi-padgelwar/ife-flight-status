@@ -26,6 +26,22 @@
   margin-bottom: 1rem;
 }
 
+.FlightPathContainer {
+  position: relative;
+}
+
+.PlaneContainer {
+  position: absolute;
+  left: -3%;
+  top: 0;
+  bottom: 4%;
+  transform: rotate(15deg);
+}
+
+.TiltRight {
+  transform: rotate(15deg);
+}
+
 @media (max-width: 768px) {
   .StatusTime {
     font-size: 0.7rem;

@@ -25,7 +25,9 @@ const Status = () => {
 const FlightPath = () => {
   return (
     <div className={styles.FlightPathContainer}>
-      <PiAirplaneTiltFill size={32} />
+      <div className={styles.PlaneContainer}>
+        <PiAirplaneTiltFill size={32} className={styles.TiltRight} />
+      </div>
       <div className={`${styles.AirportCode} ${styles.SourceCode}`}>DEL</div>
       <div className={`${styles.AirportCode} ${styles.DestinationCode}`}>
         SFO
