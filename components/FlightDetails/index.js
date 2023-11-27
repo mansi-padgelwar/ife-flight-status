@@ -1,4 +1,3 @@
-// FlightDetails.jsx
 import React from "react";
 import styles from "./FlightDetails.module.css"; // Import the CSS module
 import CustomComponent from "../CustomComponent";

@@ -1,5 +1,3 @@
-// FlightStatus.js
-
 import React from "react";
 import styles from "./FlightStatus.module.css";
 import { PiAirplaneTiltFill } from "react-icons/pi";

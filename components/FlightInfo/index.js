@@ -1,5 +1,3 @@
-// FlightInfo.js
-
 import React from "react";
 import styles from "./FlightInfo.module.css"; // Import the CSS module
 import FlightDetails from "../FlightDetails";
