@@ -1,0 +1,17 @@
+{
+  "source_city": "New Delhi",
+  "destination_city": "San Francisco",
+  "source_date": "Tue, 21st Nov",
+  "destination_date": "Tue, 21st Nov",
+  "scheduled_departure": "Scheduled Departure",
+  "terminal": "Terminal",
+  "gate": "Gate",
+  "source_scheduled_departure_time": "4:00 am[IST]",
+  "source_terminal_number": "3",
+  "source_gate_number": "12",
+  "scheduled_arrival": "Scheduled Arrival",
+  "destination_scheduled_arrival_time": "6:00 am[PST]",
+  "destination_terminal_number": "2",
+  "destination_gate_number": "23A",
+  "current_local_time": "Current Local Time"
+}

@@ -1,0 +1,17 @@
+{
+  "source_city": "نیو ڈیلہی",
+  "destination_city": "سان فرانسسکو",
+  "source_date": "منگل، 21 نومبر",
+  "destination_date": "منگل، 21 نومبر",
+  "scheduled_departure": "مقررہ روانگی",
+  "terminal": "ٹرمینل",
+  "gate": "گیٹ",
+  "source_scheduled_departure_time": "4:00 صبح[IST]",
+  "source_terminal_number": "3",
+  "source_gate_number": "12",
+  "scheduled_arrival": "مقررہ پہنچاو",
+  "destination_scheduled_arrival_time": "6:00 صبح[PST]",
+  "destination_terminal_number": "2",
+  "destination_gate_number": "23A",
+  "current_local_time": "موجودہ مقامی وقت"
+}

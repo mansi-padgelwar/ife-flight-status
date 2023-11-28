@@ -1,0 +1,17 @@
+{
+  "source_city": "नई दिल्ली",
+  "destination_city": "सैन फ्रांसिस्को",
+  "source_date": "मंगल, 21 नवंबर",
+  "destination_date": "मंगल, 21 नवंबर",
+  "scheduled_departure": "निर्धारित प्रस्थान",
+  "terminal": "टर्मिनल",
+  "gate": "गेट",
+  "source_scheduled_departure_time": "4:00 बजे[IST]",
+  "source_terminal_number": "3",
+  "source_gate_number": "12",
+  "scheduled_arrival": "निर्धारित पहुंच",
+  "destination_scheduled_arrival_time": "6:00 बजे[PST]",
+  "destination_terminal_number": "2",
+  "destination_gate_number": "23A",
+  "current_local_time": "वर्तमान स्थानीय समय"
+}

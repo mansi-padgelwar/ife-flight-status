@@ -1,21 +1,31 @@
 import React from "react";
 import styles from "./FlightInfo.module.css"; // Import the CSS module
 import FlightDetails from "../FlightDetails";
+import { useTranslation } from "next-i18next";
 
 const FlightInfo = ({ city, date, details, isVisible, setIsVisible }) => {
+  const { t } = useTranslation();
   const handleDetailsExpand = () => {
     setIsVisible(true);
-    window.Android && window.Android.triggerExpand();
+
+    if (window.Android) {
+      window.Android.triggerExpand();
+    } else {
+      console.error("window.Android is not defined");
+    }
   };
 
   const handleDetailsCollapse = () => {
     setIsVisible(false);
-    window.Android && window.Android.triggerCollapse();
+    if (window.Android) {
+      window.Android.triggerCollapse();
+    } else {
+      console.error("window.Android is not defined");
+    }
   };
 
   const handleCollapseFromAndroid = () => {
     setIsVisible(false);
-    // window.Android && window.Android.triggerCollapse();
   };
 
   if (typeof window !== "undefined") {
@@ -23,6 +33,7 @@ const FlightInfo = ({ city, date, details, isVisible, setIsVisible }) => {
       window.handleCollapseFromAndroid = handleCollapseFromAndroid;
     }
   }
+
   return (
     <div className={styles.container}>
       <div
@@ -32,8 +43,13 @@ const FlightInfo = ({ city, date, details, isVisible, setIsVisible }) => {
         }`}
       >
         <h2 className={styles.title}>
-          {city}{" "}
-          <span style={{ fontWeight: 500, fontSize: "1rem" }}>{date}</span>
+          {/* {t(`${city}`)} */}
+          {city}
+          {", "}
+          <span style={{ fontWeight: 500, fontSize: "1rem" }}>
+            {/* {t(`${date}`)} */}
+            {date}
+          </span>
         </h2>
       </div>
       <div
