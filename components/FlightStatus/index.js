@@ -13,12 +13,12 @@ const FlightStatus = ({ flightData }) => {
 
 const Status = ({ flightData }) => {
   const { t } = useTranslation();
-
+  console.log("flight data", flightData);
   return (
     <div className={styles.StatusContainer}>
-      {/* <p className={styles.FlightNumber}>
+      <p className={styles.FlightNumber}>
         {flightData[0]?.current_local_time}: 3pm
-      </p> */}
+      </p>
       <FlightPath />
       <p className={styles.StatusTime}>
         15<span style={{ fontWeight: 500 }}>h</span> 30

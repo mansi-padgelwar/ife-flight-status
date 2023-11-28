@@ -49,11 +49,11 @@ export const flights = [
         ],
       },
     ],
-    current_local_time: "Current Local Time",
   },
   {
     hi: [
       {
+        current_local_time: "वर्तमान स्थानीय समय",
         city: "नई दिल्ली",
         date: "मंगल, 21 नवंबर",
         details: [
@@ -72,11 +72,11 @@ export const flights = [
         ],
       },
     ],
-    current_local_time: "वर्तमान स्थानीय समय",
   },
   {
     es: [
       {
+        current_local_time: "Hora Local Actual",
         city: "Nueva Delhi",
         date: "Mar, 21 Nov",
         details: [
@@ -95,6 +95,5 @@ export const flights = [
         ],
       },
     ],
-    current_local_time: "Hora Local Actual",
   },
 ];

@@ -29,8 +29,6 @@ function Home({ initialFlights }) {
     window.handleLanguage = handleLanguage;
   }
 
-  console.log("flight details", initialFlights);
-
   return (
     <div className={`${styles.container} ${isVisible ? styles.visible : ""}`}>
       {/* <button onClick={() => handleLanguage("en")}>English</button>
